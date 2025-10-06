@@ -1,103 +1,175 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [selected, setSelected] = useState<"skills" | "projects">("skills");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const fadeVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      y: -10,
+      transition: { duration: 0.3, ease: "easeIn" },
+    },
+  };
+
+  const skills = [
+    "React",
+    "Next.js",
+    "React Native",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "Prisma",
+    "MongoDB",
+    "Firebase",
+    "REST API",
+    "Git & GitHub",
+    "Tailwind CSS",
+  ];
+
+  const projects = [
+    {
+      title: "Restaurant Ordering App",
+      desc: "Cross-platform React Native app allowing users to order meals, apply modifiers, and track orders in real time.",
+      tech: ["React Native", "Firebase", "TypeScript"],
+    },
+    {
+      title: "Inventory & Order API",
+      desc: "Express + Prisma backend to manage product stock, sales, and order tracking with secure JWT authentication.",
+      tech: ["Node.js", "Express", "Prisma", "MongoDB"],
+    },
+    {
+      title: "Portfolio Website",
+      desc: "Personal portfolio built with Next.js and Framer Motion showcasing skills, projects, and animations.",
+      tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    },
+    {
+      title: "Delivery Dashboard",
+      desc: "Admin dashboard for monitoring delivery status, branches, and performance metrics in real time.",
+      tech: ["React", "Firebase", "Recharts"],
+    },
+    {
+      title: "Crashlytics & Analytics Setup",
+      desc: "Integrated Firebase Crashlytics and Google Analytics for performance monitoring in production apps.",
+      tech: ["Firebase", "React Native"],
+    },
+    {
+      title: "E-Commerce Backend",
+      desc: "Scalable Node.js service supporting products, users, and orders with payment gateway integration.",
+      tech: ["Express", "Prisma", "Stripe API"],
+    },
+  ];
+
+  return (
+    <main className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-stone-50 to-rose-50 text-center px-4 overflow-hidden ">
+      {/* Header */}
+      <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 ">
+        👋 Hi, I’m{" "}
+        <span className="text-gray-600 font-extrabold">Chang Kai Lok</span>
+      </h1>
+      <p className="text-lg md:text-xl text-gray-500 max-w-2xl mb-10">
+        A software engineer passionate about crafting reliable, elegant, and
+        modern web & mobile applications.
+      </p>
+
+      {/* Selector */}
+      <div className="flex space-x-4 mb-10">
+        <button
+          onClick={() => setSelected("skills")}
+          className={`px-6 py-2 rounded-full cursor-pointer text-lg font-medium transition-all ${
+            selected === "skills"
+              ? "bg-gray-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50"
+          }`}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Skills
+        </button>
+        <button
+          onClick={() => setSelected("projects")}
+          className={`px-6 py-2 rounded-full text-lg cursor-pointer font-medium transition-all ${
+            selected === "projects"
+              ? "bg-gray-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-50"
+          }`}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          Projects
+        </button>
+      </div>
+
+      {/* Animated Content */}
+      <div className="relative w-full flex justify-center">
+        <AnimatePresence mode="wait">
+          {selected === "skills" ? (
+            <motion.div
+              key="skills"
+              variants={fadeVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="grid grid-cols-3 gap-6 max-w-3xl"
+            >
+              {skills.map((skill) => (
+                <motion.div
+                  key={skill}
+                  whileHover={{ scale: 1.05 }}
+                  className="px-6 py-3 bg-white rounded-2xl border border-gray-100 shadow-sm text-center text-lg font-medium text-gray-800 hover:shadow-md transition-all"
+                >
+                  {skill}
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="projects"
+              variants={fadeVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="grid grid-cols-3 gap-8 max-w-6xl"
+            >
+              {projects.map((p) => (
+                <motion.div
+                  key={p.title}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+                  }}
+                  className="bg-white rounded-2xl p-6 border border-gray-100 text-left transition-all"
+                >
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                    {p.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm mb-4">{p.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-md"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Footer */}
+      <footer className="absolute bottom-4 text-gray-400 text-sm">
+        © {new Date().getFullYear()} Chang Kai Lok. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
