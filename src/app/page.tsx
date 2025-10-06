@@ -1,23 +1,23 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function Home() {
   const [selected, setSelected] = useState<"skills" | "projects">("skills");
 
-  const fadeVariants = {
+  const fadeVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95, y: 10 },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
     },
     exit: {
       opacity: 0,
       scale: 0.95,
       y: -10,
-      transition: { duration: 0.3, ease: "easeIn" },
+      transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
     },
   };
 
