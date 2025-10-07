@@ -53,21 +53,6 @@ export default function Home() {
       tech: ["Playwright", "Next.js", "Tailwind CSS", "TypeScript"],
     },
     {
-      title: "Inventory & Order API",
-      desc: "Express + Prisma backend for managing product inventory, order flow, and sales data with JWT-secured authentication and MongoDB integration.",
-      tech: ["Node.js", "Express", "Prisma", "MongoDB"],
-    },
-    {
-      title: "Delivery Dashboard",
-      desc: "Real-time monitoring dashboard for tracking deliveries, branches, and performance metrics using Firebase as backend and Recharts for visualization.",
-      tech: ["React", "Firebase", "Recharts"],
-    },
-    {
-      title: "Crashlytics & Analytics Setup",
-      desc: "Integrated Firebase Crashlytics and Google Analytics to monitor performance and user engagement in production-level mobile apps.",
-      tech: ["Firebase", "React Native"],
-    },
-    {
       title: "Forecasting System Backend",
       desc: "Backend system for demand forecasting using Flask and Express.js APIs. Handles data ingestion, preprocessing, and model inference for predictive insights.",
       tech: ["Flask", "Express.js", "Python", "Node.js"],
