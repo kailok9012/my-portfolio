@@ -95,7 +95,7 @@ export default function Home() {
       {/* Header */}
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900">
-          👋 Hi, I’m{" "}
+          👋 Hi, I'm{" "}
           <span className="text-gray-600 font-extrabold">Chang Kai Lok</span>
         </h1>
         <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-10">
