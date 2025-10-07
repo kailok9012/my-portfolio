@@ -95,18 +95,18 @@ export default function Home() {
       {/* Header */}
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900">
-          👋 Hi, I'm{" "}
-          <span className="text-gray-600 font-extrabold">Chang Kai Lok</span>
+          👋 Hi, I&apos;m
+          <span className="text-gray-600 font-extrabold"> Chang Kai Lok</span>
         </h1>
-        <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-10">
-          I'm a Data Science undergraduate at Multimedia University (MMU) with
-          hands-on experience through freelance projects involving both web and
-          mobile applications. My work spans restaurant ordering systems, admin
-          dashboards, automation tools, and AI-driven recruitment platforms
-          using technologies such as React Native, Next.js, Express, Flask, and
-          TypeScript.
-        </p>
 
+        <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-10">
+          I&apos;m a Data Science undergraduate at Multimedia University (MMU)
+          with hands-on experience through freelance projects involving both web
+          and mobile applications. My work spans restaurant ordering systems,
+          admin dashboards, automation tools, and AI-driven recruitment
+          platforms using technologies such as React Native, Next.js, Express,
+          Flask, and TypeScript.
+        </p>
         {/* Selector */}
         <div className="flex justify-center space-x-4 mb-10">
           {["skills", "projects"].map((tab) => (
