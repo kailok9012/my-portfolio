@@ -38,34 +38,57 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Restaurant Ordering App",
-      desc: "Cross-platform React Native app allowing users to order meals, apply modifiers, and track orders in real time.",
-      tech: ["React Native", "Firebase", "TypeScript"],
+      title: "Marrybrown Ordering App",
+      desc: "Cross-platform restaurant ordering system built with React Native and TypeScript. Supports dynamic menu modifiers, order tracking, and Firebase push notifications.",
+      tech: ["React Native", "TypeScript", "Firebase"],
+    },
+    {
+      title: "Starmigo Language Platform",
+      desc: "A Duolingo-inspired ecosystem for language learning. Includes a mobile app built with React Native and an admin dashboard using Next.js, Tailwind CSS, and Prisma.",
+      tech: ["Next.js", "React Native", "TypeScript", "Tailwind CSS", "Prisma"],
+    },
+    {
+      title: "Property Auto-Uploader",
+      desc: "Automation tool that uploads property listings to multiple platforms with one click using Playwright and Next.js. Focused on speed and reliability.",
+      tech: ["Playwright", "Next.js", "Tailwind CSS", "TypeScript"],
     },
     {
       title: "Inventory & Order API",
-      desc: "Express + Prisma backend to manage product stock, sales, and order tracking with secure JWT authentication.",
+      desc: "Express + Prisma backend for managing product inventory, order flow, and sales data with JWT-secured authentication and MongoDB integration.",
       tech: ["Node.js", "Express", "Prisma", "MongoDB"],
     },
     {
-      title: "Portfolio Website",
-      desc: "Personal portfolio built with Next.js and Framer Motion showcasing skills, projects, and animations.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    },
-    {
       title: "Delivery Dashboard",
-      desc: "Admin dashboard for monitoring delivery status, branches, and performance metrics in real time.",
+      desc: "Real-time monitoring dashboard for tracking deliveries, branches, and performance metrics using Firebase as backend and Recharts for visualization.",
       tech: ["React", "Firebase", "Recharts"],
     },
     {
       title: "Crashlytics & Analytics Setup",
-      desc: "Integrated Firebase Crashlytics and Google Analytics for performance monitoring in production apps.",
+      desc: "Integrated Firebase Crashlytics and Google Analytics to monitor performance and user engagement in production-level mobile apps.",
       tech: ["Firebase", "React Native"],
     },
     {
-      title: "E-Commerce Backend",
-      desc: "Scalable Node.js service supporting products, users, and orders with payment gateway integration.",
-      tech: ["Express", "Prisma", "Stripe API"],
+      title: "Forecasting System Backend",
+      desc: "Backend system for demand forecasting using Flask and Express.js APIs. Handles data ingestion, preprocessing, and model inference for predictive insights.",
+      tech: ["Flask", "Express.js", "Python", "Node.js"],
+    },
+    {
+      title: "Recruiting System (FYP)",
+      desc: "AI-powered recruitment platform combining Flask, Next.js, and Express. Uses the Gemini API to perform resume screening and a custom ML model to calculate match percentages between candidates and job requirements.",
+      tech: [
+        "Flask",
+        "Next.js",
+        "Express",
+        "TypeScript",
+        "Tailwind CSS",
+        "Python",
+        "Gemini API",
+      ],
+    },
+    {
+      title: "Supermarket Ordering App",
+      desc: "Mobile ordering platform built with Flutter and Dart, designed for supermarkets to manage orders, stock levels, and delivery scheduling.",
+      tech: ["Flutter", "Dart", "Firebase"],
     },
   ];
 
